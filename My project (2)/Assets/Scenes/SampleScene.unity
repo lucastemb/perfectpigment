@@ -154,6 +154,37 @@ Transform:
   m_Father: {fileID: 1151159553}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &377823549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 377823550}
+  m_Layer: 0
+  m_Name: BulletSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &377823550
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377823549}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.49, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1332898088}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,6 +579,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cccd47ed240d04e2ba6c4342ce3d05f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOnGround: 1
+  playerRb: {fileID: 0}
   controller: {fileID: 0}
   speed: 12
 --- !u!136 &1151159556
@@ -594,6 +627,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cccd47ed240d04e2ba6c4342ce3d05f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOnGround: 1
+  playerRb: {fileID: 0}
   controller: {fileID: 1151159557}
   speed: 12
 --- !u!54 &1151159559
@@ -623,7 +658,7 @@ GameObject:
   - component: {fileID: 1332898088}
   - component: {fileID: 1332898087}
   - component: {fileID: 1332898086}
-  - component: {fileID: 1332898085}
+  - component: {fileID: 1332898089}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -631,20 +666,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &1332898085
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1332898084}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1332898086
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -706,7 +727,23 @@ Transform:
   m_LocalPosition: {x: 0.368, y: -0.32, z: 1.02}
   m_LocalScale: {x: 0.25725, y: 0.68019986, z: 0.25794995}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 377823550}
   m_Father: {fileID: 963194228}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: -90, z: -90}
+--- !u!114 &1332898089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332898084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6bab7278bbb44288ba00d794fb1bc5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawnPoint: {fileID: 377823550}
+  bulletPrefab: {fileID: 0}
+  bulletSpeed: 30
