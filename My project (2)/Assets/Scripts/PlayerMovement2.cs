@@ -20,7 +20,6 @@ public class PlayerMovement2 : MonoBehaviour
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
         if(isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
@@ -41,5 +40,11 @@ public class PlayerMovement2 : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    void OnCollisionEnter(Collision col){
+        if(col.gameObject.CompareTag("Trampoline")){
+            velocity.y = Mathf.Sqrt(14f * -2f * gravity);
+        }
     }
 }
