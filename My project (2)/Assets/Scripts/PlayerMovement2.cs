@@ -7,15 +7,14 @@ public class PlayerMovement2 : MonoBehaviour
     public CharacterController controller;
 
     public float speed = 12f;
-    public float gravity = -9.81f;
+    public static float gravity = -9.81f;
     public float jumpHeight = 3f;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
-
-    Vector3 velocity;
-    bool isGrounded;
+    public bool isGrounded;
+    public static Vector3 velocity;
 
     void Update()
     {
@@ -37,14 +36,12 @@ public class PlayerMovement2 : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
+        
+
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
     }
 
-    void OnCollisionEnter(Collision col){
-        if(col.gameObject.CompareTag("Trampoline")){
-            velocity.y = Mathf.Sqrt(14f * -2f * gravity);
-        }
-    }
 }
