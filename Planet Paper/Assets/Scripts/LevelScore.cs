@@ -6,22 +6,21 @@ using UnityEngine.UI;
 public class LevelScore : MonoBehaviour
 {
     public Text EnemyText;
-    private float totalEnemies = 4;
+    public float totalEnemies;
     public static float enemiesWiped = 0;
+    public static float percentage;
 
     void Start()
     {
         enemiesWiped = 0;
-    }
-
-    private void AddPoint()
-    {
-        //totalEnemies = (enemiesWiped / totalEnemies) * 100;
-        Debug.Log(enemiesWiped);
+        //GameObject.FindGameObjectsWithTag("Enemy");
+        
     }
 
     void Update()
     {
-        EnemyText.text = "Enemy Percent: " + totalEnemies;
+        percentage = (enemiesWiped / totalEnemies) * 100;
+        EnemyText.text = "Enemy Percent: " + percentage;
+        Debug.Log(percentage);
     }
 }
