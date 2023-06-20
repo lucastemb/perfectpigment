@@ -6,10 +6,13 @@ public class Bullet : MonoBehaviour
 {
 
     public GameObject enemy; 
+    public LevelScore enemiesWiped;
+    
     void Awake()
     {
         Destroy(gameObject, 3);
     }
+
 
     void OnCollisionEnter(Collision collision)
     {
@@ -17,6 +20,7 @@ public class Bullet : MonoBehaviour
         {
         Destroy(collision.gameObject);
         Destroy(gameObject);
+        enemiesWiped.AddPoint(1);
         }
     }
 
