@@ -17,7 +17,7 @@ public class VariableManager : MonoBehaviour
     }
 
     private float CalculateEnemiesKilled(){
-        return((numOfEnemies/enemy)*100);
+        return((numOfEnemies/enemy));
     }
 
 }
