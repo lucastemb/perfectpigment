@@ -7,13 +7,15 @@ public class LoadLevel : MonoBehaviour
 {
     public void Load(string LevelName)
     {
+        Time.timeScale = 1f;
+        PauseMenu.gamePaused = false;
         SceneManager.LoadScene(LevelName);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player")){
-        SceneManager.LoadScene("Level02");
+            SceneManager.LoadScene("Level02");
         }
     }
 }

@@ -23,6 +23,7 @@ public class PauseMenu : MonoBehaviour
             }
 
         }
+
     }
 
     public void Resume ()
@@ -32,17 +33,19 @@ public class PauseMenu : MonoBehaviour
         gamePaused = false;
     }
 
-    void Pause ()
+    void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         gamePaused = true;
+        
     }
 
     public void LoadMenu()
     {
         Debug.Log("Loading Menu...");
         SceneManager.LoadScene("MainMenu");
+        
     }
 
     public void QuitGame()

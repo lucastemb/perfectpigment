@@ -37,7 +37,9 @@ public class Stopwatch : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("Player")){
         finishText.text = "Final Time: " + currentTimeText.text;
         stopwatchActive = false;
+        }
     }
 }
