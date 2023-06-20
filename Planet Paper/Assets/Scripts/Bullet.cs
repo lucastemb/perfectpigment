@@ -14,13 +14,14 @@ public class Bullet : MonoBehaviour
     }
 
 
-    void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
         Destroy(collision.gameObject);
         Destroy(gameObject);
-        enemiesWiped.AddPoint(1);
+        LevelScore.enemiesWiped += 1;
+        Debug.Log(gameObject);
         }
     }
 
