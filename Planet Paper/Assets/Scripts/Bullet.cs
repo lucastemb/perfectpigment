@@ -17,6 +17,7 @@ public class Bullet : MonoBehaviour
         {
         Destroy(collision.gameObject);
         Destroy(gameObject);
+        VariableManager.numOfEnemies+=1;
         }
     }
 
