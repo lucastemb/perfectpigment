@@ -25,6 +25,7 @@ public class FirstPersonCamera: MonoBehaviour
         {
         Cursor.visible = false; 
         Cursor.lockState = CursorLockMode.Locked;
+        Debug.Log(PauseMenu.gamePaused);
         float inputX = Input.GetAxis("Mouse X")*mouseSensitivity;
         float inputY = Input.GetAxis("Mouse Y")*mouseSensitivity;
         

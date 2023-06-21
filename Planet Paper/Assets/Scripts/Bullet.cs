@@ -21,6 +21,7 @@ public class Bullet : MonoBehaviour
         Destroy(collision.gameObject);
         Destroy(gameObject);
         LevelScore.enemiesWiped += 1;
+        
         }
     }
 
