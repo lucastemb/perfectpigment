@@ -5,7 +5,6 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 
-    public GameObject enemy; 
     public LevelScore enemiesWiped;
     
     void Awake()
