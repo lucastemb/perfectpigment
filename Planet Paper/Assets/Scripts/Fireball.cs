@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-   
     void Awake()
     {
         Destroy(gameObject, 3);
@@ -14,6 +13,10 @@ public class Fireball : MonoBehaviour
         if(col.gameObject.CompareTag("Player")){
             Debug.Log("Hit");
         }
+        else if (!col.gameObject.CompareTag("Enemy")){
+            Destroy(gameObject);
+        }
     }
+    
 
 }
