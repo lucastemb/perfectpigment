@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Stats : MonoBehaviour
+public class Stats : LevelScore
 {
     public GameObject star1, star2, star3;
     public Text currentTimeText;
     public Text finishText;
     public static int stars = 1;
-    public static float devTime = 30f;
     private static bool computed = false;
-
+    
     public void Start()
     {
         star1.SetActive(false);
@@ -22,7 +21,9 @@ public class Stats : MonoBehaviour
     {
         Time();
         showStars();
-        Debug.Log(stars);
+        //Debug.Log(stars);
+        Debug.Log("Enemies Wiped: " + enemiesWiped);
+        Debug.Log("Total Enemies: " + totalEnemies);
     }
 
     public void Time()
@@ -33,9 +34,9 @@ public class Stats : MonoBehaviour
         //Debug.Log(Stopwatch.currentTime);
     }
 
-    public static void numOfStars()
+    public void numOfStars()
     {
-        if (LevelScore.enemiesWiped == LevelScore.totalEnemies)
+        if (enemiesWiped == totalEnemies)
         {
             stars++;
         }

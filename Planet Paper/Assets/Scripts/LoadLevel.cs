@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class LoadLevel : MonoBehaviour
 {
 
+    [SerializeField]
+    public string currentLevel;
     public GameObject scoreboard;  
     public static void Load(string LevelName)
     {
@@ -18,10 +20,14 @@ public class LoadLevel : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player")){
-            SceneManager.LoadScene("Level01Score");
+            SceneManager.LoadScene("Score");
             //scoreboard.SetActive(true);
 
             
         }
+    }
+
+    public string returnString(){
+        return currentLevel;
     }
 }

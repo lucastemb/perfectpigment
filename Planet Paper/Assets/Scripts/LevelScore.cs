@@ -6,7 +6,10 @@ using UnityEngine.UI;
 public class LevelScore : MonoBehaviour
 {
     public Text EnemyText;
-    public static float totalEnemies = 4;
+    [SerializeField]
+    public float totalEnemies;
+    public float devTime;
+
     private static float sum = 0; 
     public static float enemiesWiped = 0;
 
@@ -17,6 +20,7 @@ public class LevelScore : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(totalEnemies);
         sum = (enemiesWiped / totalEnemies) * 100;
         EnemyText.text = "Enemy Percent: " + sum;
     }
