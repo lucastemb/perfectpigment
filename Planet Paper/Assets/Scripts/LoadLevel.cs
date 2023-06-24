@@ -8,7 +8,7 @@ public class LoadLevel : MonoBehaviour
 {
 
     public GameObject scoreboard;  
-    public void Load(string LevelName)
+    public static void Load(string LevelName)
     {
         Time.timeScale = 1f;
         PauseMenu.gamePaused = false;
@@ -18,8 +18,8 @@ public class LoadLevel : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player")){
-            //SceneManager.LoadScene("Level02");
-            scoreboard.SetActive(true);
+            SceneManager.LoadScene("Level01Score");
+            //scoreboard.SetActive(true);
 
             
         }

@@ -12,6 +12,7 @@ public class Fireball : MonoBehaviour
     public void OnCollisionEnter(Collision col){
         if(col.gameObject.CompareTag("Player")){
             Debug.Log("Hit");
+            LoadLevel.Load("Level01");
         }
         else if (!col.gameObject.CompareTag("Enemy")){
             Destroy(gameObject);
