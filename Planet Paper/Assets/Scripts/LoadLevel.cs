@@ -7,9 +7,7 @@ using UnityEngine.SceneManagement;
 public class LoadLevel : MonoBehaviour
 {
 
-    [SerializeField]
-    public string currentLevel;
-    public GameObject scoreboard;  
+    public static int currentLevel = 0; 
     public static void Load(string LevelName)
     {
         Time.timeScale = 1f;
@@ -21,13 +19,13 @@ public class LoadLevel : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player")){
             SceneManager.LoadScene("Score");
-            //scoreboard.SetActive(true);
 
             
         }
     }
 
-    public string returnString(){
-        return currentLevel;
+    public void incrementLevel(){
+        currentLevel+=1;
+        Load(LevelInfo.levels[LoadLevel.currentLevel].getName());
     }
 }

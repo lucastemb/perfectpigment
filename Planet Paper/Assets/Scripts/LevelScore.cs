@@ -6,9 +6,8 @@ using UnityEngine.UI;
 public class LevelScore : MonoBehaviour
 {
     public Text EnemyText;
-    [SerializeField]
-    public float totalEnemies;
-    public float devTime;
+    public float totalEnemies = LevelInfo.levels[LoadLevel.currentLevel].getEnemies();
+    public float devTime = LevelInfo.levels[LoadLevel.currentLevel].getDevTime();
 
     private static float sum = 0; 
     public static float enemiesWiped = 0;

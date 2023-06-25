@@ -13,9 +13,8 @@ public class Fireball : MonoBehaviour
         if(col.gameObject.CompareTag("Player")){
 
             //Get current level from LoadLevel class and restart level if player is hit
-            loadInstance = FindObjectOfType<LoadLevel>();
-            string levelValue = loadInstance.currentLevel; 
-            LoadLevel.Load(levelValue);
+        
+            LoadLevel.Load(LevelInfo.levels[LoadLevel.currentLevel].getName());
         }
         else if (!col.gameObject.CompareTag("Enemy")){
             Destroy(gameObject);

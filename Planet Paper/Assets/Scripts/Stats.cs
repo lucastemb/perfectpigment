@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Stats : LevelScore
+public class Stats : MonoBehaviour
 {
     public GameObject star1, star2, star3;
     public Text currentTimeText;
@@ -21,28 +21,28 @@ public class Stats : LevelScore
     {
         Time();
         showStars();
-        //Debug.Log(stars);
-        Debug.Log("Enemies Wiped: " + enemiesWiped);
-        Debug.Log("Total Enemies: " + totalEnemies);
+        Debug.Log(stars);
+        Debug.Log(LevelScore.enemiesWiped == LevelInfo.levels[LoadLevel.currentLevel].getEnemies());
+
     }
 
     public void Time()
     {
         float currentTime = Stopwatch.currentTime;
         currentTimeText.text = currentTime.ToString();
-        //finishText.text = "Final Time: " + currentTime.text;
-        //Debug.Log(Stopwatch.currentTime);
     }
 
     public void numOfStars()
     {
-        if (enemiesWiped == totalEnemies)
+        if (LevelScore.enemiesWiped == LevelInfo.levels[LoadLevel.currentLevel].getEnemies())
         {
             stars++;
+            Debug.Log("stars for enemies activated");
         }
-        if (Stopwatch.currentTime < devTime)
+        if (Stopwatch.currentTime < LevelInfo.levels[LoadLevel.currentLevel].getDevTime())
         {
             stars++;
+            Debug.Log("stars for time activated");
         }
     }
 
