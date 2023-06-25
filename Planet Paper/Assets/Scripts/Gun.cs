@@ -13,7 +13,7 @@ public class Gun : MonoBehaviour
         if (PauseMenu.gamePaused == false)
         {
         if(Input.GetMouseButtonDown(0)){
-            var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
             bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.up * bulletSpeed;
 
 

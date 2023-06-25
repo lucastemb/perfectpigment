@@ -7,7 +7,6 @@ public class Level : MonoBehaviour
     private string levelName; 
     private float numOfEnemies;
     private float devTime; 
-    private string nextLevel;
     
 
     public Level(string levelName, float numOfEnemies, float devTime){
