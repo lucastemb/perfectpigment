@@ -26,6 +26,8 @@ public class LoadLevel : MonoBehaviour
 
     public void incrementLevel(){
         currentLevel+=1;
+        Stats.stars = 1;
+        Stats.computed=false;
         Load(LevelInfo.levels[LoadLevel.currentLevel].getName());
     }
 }

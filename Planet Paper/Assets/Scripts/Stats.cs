@@ -9,7 +9,7 @@ public class Stats : MonoBehaviour
     public Text currentTimeText;
     public Text finishText;
     public static int stars = 1;
-    private static bool computed = false;
+    public static bool computed = false;
     
     public void Start()
     {
@@ -22,7 +22,7 @@ public class Stats : MonoBehaviour
         Time();
         showStars();
         Debug.Log(stars);
-        Debug.Log(LevelScore.enemiesWiped == LevelInfo.levels[LoadLevel.currentLevel].getEnemies());
+        Debug.Log(Stopwatch.currentTime < LevelInfo.levels[LoadLevel.currentLevel].getDevTime());
 
     }
 
