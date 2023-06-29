@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement2 : MonoBehaviour
 {
@@ -42,5 +43,10 @@ public class PlayerMovement2 : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+        if(Input.GetKeyDown("r"))
+        {
+            SceneManager.LoadScene("Tropic Biome");
+        }
     }
 }
