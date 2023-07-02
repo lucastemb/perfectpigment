@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9179549824846508498}
   - component: {fileID: 4124631355693534791}
   - component: {fileID: 6111647218887792244}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trampoline
   m_TagString: Trampoline
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 4828340745635109038}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8454586266112124028
 MeshFilter:
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 4828340745635109038}
   - component: {fileID: 3436803783751360616}
   - component: {fileID: 6148421324517374331}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bounce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
