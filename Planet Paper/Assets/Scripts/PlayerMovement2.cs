@@ -19,13 +19,12 @@ public class PlayerMovement2 : MonoBehaviour
     bool isGrounded;
 
     void Update()
-    {
-        
+    {   
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0)
         {
-            velocity.y = -2f;
+            velocity.y = -10f;
         }
 
         float x = Input.GetAxis("Horizontal");
@@ -49,4 +48,11 @@ public class PlayerMovement2 : MonoBehaviour
             SceneManager.LoadScene("Tropic Biome");
         }
     }
+
+    private void OnDrawGizmos(){
+        Vector3 position = groundCheck.position;
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(position, groundDistance);
+    }
 }
+
