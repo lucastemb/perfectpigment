@@ -19,7 +19,7 @@ public class LevelScore : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(totalEnemies);
+        Debug.Log(enemiesWiped);
         sum = (enemiesWiped / totalEnemies) * 100;
         EnemyText.text = "Enemy Percent: " + sum;
     }
