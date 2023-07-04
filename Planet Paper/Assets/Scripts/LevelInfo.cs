@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class LevelInfo : MonoBehaviour
 {
-    public static Level level01 = new Level("Level01", 4f, 30f);
-    public static Level level02 = new Level("Level02", 1f, 10f);
-    public static Level[] levels = {level01, level02};
+    public static Level city = new Level("City", 27f, 90f);
+    public static Level desert = new Level("Desert", 10f, 10f);
+    public static Level beach = new Level("Tropic Biome", 1f, 30f);
+
+    public static Level[] levels = {city, desert, beach};
 
 }
