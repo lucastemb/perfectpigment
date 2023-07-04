@@ -20,6 +20,8 @@ public class EnemyController : MonoBehaviour
     {
         target = PlayerManager.instance.player.transform;   
         agent = GetComponent<NavMeshAgent>(); 
+        Debug.Log(target);
+        Debug.Log(transform);
     }
 
     void Update()
@@ -39,7 +41,7 @@ public class EnemyController : MonoBehaviour
         if (!hasAttacked){
             Vector3 bulletSpawnPoint = new Vector3(transform.position.x, transform.position.y+1f, transform.position.z);
             Rigidbody rb = Instantiate(bulletPrefab, bulletSpawnPoint, Quaternion.identity).GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * 12f, ForceMode.Impulse);
+            rb.AddForce(transform.forward * bulletSpeed, ForceMode.Impulse);
             hasAttacked = true;
             Invoke(nameof(ResetAttack),0.5f);
         }

@@ -30,4 +30,10 @@ public class LoadLevel : MonoBehaviour
         Stats.computed=false;
         Load(LevelInfo.levels[LoadLevel.currentLevel].getName());
     }
+
+    public static IEnumerator startGame()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("City");
+    }
 }
