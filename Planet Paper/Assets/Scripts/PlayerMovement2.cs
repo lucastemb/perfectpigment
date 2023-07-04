@@ -20,6 +20,9 @@ public class PlayerMovement2 : MonoBehaviour
 
     void Update()
     {   
+        if(transform.position.y < -9.0f && LevelInfo.levels[LoadLevel.currentLevel].getName()=="City"){
+            LoadLevel.Load(LevelInfo.levels[LoadLevel.currentLevel].getName());
+        }
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0)
