@@ -20,8 +20,8 @@ public class EnemyController : MonoBehaviour
     {
         target = PlayerManager.instance.player.transform;   
         agent = GetComponent<NavMeshAgent>(); 
-        Debug.Log(target);
-        Debug.Log(transform);
+        //Debug.Log(target);
+        //Debug.Log(transform);
     }
 
     void Update()

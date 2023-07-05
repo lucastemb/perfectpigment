@@ -6,7 +6,13 @@ public class Bullet : MonoBehaviour
 {
 
     public LevelScore enemiesWiped;
+    ParticleSystem Droplet_PS;
     
+    void Start()
+    {
+        Droplet_PS = GetComponent<ParticleSystem>();
+    }
+
     void Awake()
     {
         Destroy(gameObject, 3);
@@ -21,7 +27,7 @@ public class Bullet : MonoBehaviour
         Destroy(collision.gameObject);
         Destroy(gameObject);
         LevelScore.enemiesWiped += 1;
-        
+        Droplet_PS.Play();
         }
         else{
         projectile.velocity = new Vector3(0f,0f,0f);
