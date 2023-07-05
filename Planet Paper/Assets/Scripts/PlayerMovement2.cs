@@ -19,8 +19,10 @@ public class PlayerMovement2 : MonoBehaviour
     public bool isGrounded;
 
     void Update()
-    {
-        
+    {   
+        if(transform.position.y < -9.0f && LevelInfo.levels[LoadLevel.currentLevel].getName()=="City"){
+            LoadLevel.Load(LevelInfo.levels[LoadLevel.currentLevel].getName());
+        }
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0)
@@ -49,4 +51,11 @@ public class PlayerMovement2 : MonoBehaviour
             SceneManager.LoadScene("Tropic Biome");
         }
     }
+
+    private void OnDrawGizmos(){
+        Vector3 position = groundCheck.position;
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(position, groundDistance);
+    }
 }
+

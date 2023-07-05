@@ -37,13 +37,13 @@ public class EnemyController : MonoBehaviour
     }
 
     private void AttackPlayer(){
-        transform.LookAt(target);
         if (!hasAttacked){
-            Vector3 bulletSpawnPoint = new Vector3(transform.position.x, transform.position.y+1f, transform.position.z);
+            Vector3 bulletSpawnPoint = new Vector3(transform.position.x, transform.position.y+1.5f, transform.position.z);
             Rigidbody rb = Instantiate(bulletPrefab, bulletSpawnPoint, Quaternion.identity).GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * bulletSpeed, ForceMode.Impulse);
             hasAttacked = true;
             Invoke(nameof(ResetAttack),0.5f);
+            
         }
     }
     
