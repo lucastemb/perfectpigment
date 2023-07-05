@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Score.unity
     guid: 3f3614f5374a8dd41bbda63ecbb3b458
+  - enabled: 1
+    path: Assets/Scenes/City.unity
+    guid: 0f5ae2c05a4ae441d9fc18c5c95a9244
+  - enabled: 1
+    path: Assets/Scenes/Desert.unity
+    guid: a0c18c0abdddf49ada9a38f2c87e8746
+  - enabled: 1
+    path: Assets/Scenes/Tropic Biome.unity
+    guid: be3781e5af0b3ee429d7939060835d60
   m_configObjects: {}

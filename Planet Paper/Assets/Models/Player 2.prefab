@@ -232,7 +232,7 @@ Transform:
   - {fileID: 6938440149984122326}
   - {fileID: 2306632115776503478}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6279244584842128435
 MeshFilter:
@@ -380,6 +380,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+  isGrounded: 0
 --- !u!1 &7840780689144061209
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Enemy
+  - Trampoline
+  - Bullet
   layers:
   - Default
   - TransparentFX

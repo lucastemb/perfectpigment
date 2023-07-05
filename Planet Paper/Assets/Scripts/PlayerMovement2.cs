@@ -16,7 +16,7 @@ public class PlayerMovement2 : MonoBehaviour
     public LayerMask groundMask;
 
     public static Vector3 velocity;
-    bool isGrounded;
+    public bool isGrounded;
 
     void Update()
     {   
