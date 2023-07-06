@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
 
     public LevelScore enemiesWiped;
-    ParticleSystem Droplet_PS;
+    public ParticleSystem Droplet_PS;
     
     void Start()
     {
@@ -18,7 +18,6 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, 3);
     }
 
-
     public void OnCollisionEnter(Collision collision)
     {
         Rigidbody projectile = GetComponent<Rigidbody>();
@@ -28,6 +27,7 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject);
         LevelScore.enemiesWiped += 1;
         Droplet_PS.Play();
+        //Debug.Log(Destroy(gameObject));
         }
         else{
         projectile.velocity = new Vector3(0f,0f,0f);

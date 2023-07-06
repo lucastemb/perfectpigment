@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Splatter : MonoBehaviour
 {
-    ParticleSystem Droplet_PS;
+    public ParticleSystem Droplet_PS;
     void Start()
     {
         Droplet_PS = GetComponent<ParticleSystem>();
@@ -12,16 +12,18 @@ public class Splatter : MonoBehaviour
 
     void Update()
     {
-
-    
+        if(Input.GetMouseButtonDown(0))
+        {  
+            Droplet_PS.Play();
+        }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Enemy"))
+        if(other.gameObject.CompareTag("Bullet"))
         {
             Droplet_PS.Play();
-            Debug.Log(Droplet_PS);
+            //Debug.Log(Droplet);
         }
     }
 }
