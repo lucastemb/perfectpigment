@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-
+    public static bool hit = false;
     public LevelScore enemiesWiped;
     ParticleSystem Droplet_PS;
     
@@ -25,6 +25,7 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
         Destroy(collision.gameObject);
+        hit=true;
         LevelScore.enemiesWiped += 1;
         //Droplet_PS.Play();
         }

@@ -10,6 +10,7 @@ public class EnemyController1 : MonoBehaviour
     public GameObject bulletPrefab; 
     Animator playeranimator;
     public float bulletSpeed = 12f;
+    [SerializeField] private AudioSource shot;
     
     Transform target;
     NavMeshAgent agent;
@@ -54,6 +55,7 @@ public class EnemyController1 : MonoBehaviour
             Vector3 bulletSpawnPoint = new Vector3(transform.position.x, transform.position.y+1f, transform.position.z);
             Rigidbody rb = Instantiate(bulletPrefab, bulletSpawnPoint, Quaternion.identity).GetComponent<Rigidbody>();
             rb.AddForce(-transform.right * 12f, ForceMode.Impulse);
+            shot.Play();
             hasAttacked = true;
             Invoke(nameof(ResetAttack),0.5f);
             
