@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     
     void Start()
     {
-        Droplet_PS = GetComponent<ParticleSystem>();
+        //Droplet_PS = GetComponent<ParticleSystem>();
     }
 
     void Awake()
@@ -25,14 +25,10 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
         Destroy(collision.gameObject);
-        Destroy(gameObject);
         LevelScore.enemiesWiped += 1;
-        Droplet_PS.Play();
+        //Droplet_PS.Play();
         }
-        else{
-        projectile.velocity = new Vector3(0f,0f,0f);
-        Destroy(gameObject,0.75f);
-        }
+        Destroy(gameObject);
     }
 
 }
