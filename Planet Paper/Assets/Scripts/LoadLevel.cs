@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class LoadLevel : MonoBehaviour
 {
 
-    public static int currentLevel = 0; 
+    public static int currentLevel = 1; 
     public static void Load(string LevelName)
     {
         Time.timeScale = 1f;
