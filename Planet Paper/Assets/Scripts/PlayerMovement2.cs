@@ -17,15 +17,16 @@ public class PlayerMovement2 : MonoBehaviour
 
     public static Vector3 velocity;
     public bool isGrounded;
-    public static bool cheeseburger;
+    public static bool jumping;
 
 
     void Update()
     {   
-        if(transform.position.y < -9.0f && LevelInfo.levels[LoadLevel.currentLevel].getName()=="City"){
+        if(transform.position.y < -9.0f && (LevelInfo.levels[LoadLevel.currentLevel].getName()=="City" || LevelInfo.levels[LoadLevel.currentLevel].getName()=="Tropic Biome")){
             LoadLevel.Load(LevelInfo.levels[LoadLevel.currentLevel].getName());
         }
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        jumping=isGrounded;
 
         if(isGrounded && velocity.y < 0)
         {
@@ -42,7 +43,6 @@ public class PlayerMovement2 : MonoBehaviour
         if(Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            cheeseburger = true; 
         }
 
         velocity.y += gravity * Time.deltaTime;
