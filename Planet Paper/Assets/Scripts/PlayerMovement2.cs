@@ -17,6 +17,8 @@ public class PlayerMovement2 : MonoBehaviour
 
     public static Vector3 velocity;
     public bool isGrounded;
+    public static bool cheeseburger;
+
 
     void Update()
     {   
@@ -40,6 +42,7 @@ public class PlayerMovement2 : MonoBehaviour
         if(Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            cheeseburger = true; 
         }
 
         velocity.y += gravity * Time.deltaTime;
