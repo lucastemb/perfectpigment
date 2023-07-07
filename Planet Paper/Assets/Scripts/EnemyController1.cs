@@ -11,6 +11,7 @@ public class EnemyController1 : MonoBehaviour
     Animator playeranimator;
     public float bulletSpeed = 12f;
     [SerializeField] private AudioSource shot;
+    public Transform Droplet_PS;
     
     Transform target;
     NavMeshAgent agent;

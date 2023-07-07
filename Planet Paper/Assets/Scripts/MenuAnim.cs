@@ -7,6 +7,7 @@ public class MenuAnim : MonoBehaviour
 {
 
     private Animator anim;
+    public AudioSource crumpleplay;
 
     void Start()
     {
@@ -18,12 +19,18 @@ public class MenuAnim : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {  
             anim.SetBool("idle", true);
+            crumpleplay.Play();
             StartCoroutine(LoadLevel.startGame());
         }
         else
         {
             anim.SetBool("idle", false);
         }
+
+        //if(anim.SetBool("idle", true))
+        //{  
+        //    crumpleplay.Play();
+        //}
     }
     
 }
