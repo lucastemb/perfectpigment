@@ -31,6 +31,7 @@ public class LoadLevel : MonoBehaviour
         Load(LevelInfo.levels[LoadLevel.currentLevel].getName());
     }
 
+    //Main Menu game start delay for animation
     public static IEnumerator startGame()
     {
         yield return new WaitForSeconds(1);
