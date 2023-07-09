@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public static bool hit = false;
     public LevelScore enemiesWiped;
-    ParticleSystem Droplet_PS;
+    public GameObject Droplet_PS;
     
     void Start()
     {
@@ -21,14 +21,20 @@ public class Bullet : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
+        Instantiate(Droplet_PS, transform.position, Quaternion.identity);
         Rigidbody projectile = GetComponent<Rigidbody>();
         if (collision.gameObject.CompareTag("Enemy"))
         {
         Destroy(collision.gameObject);
         hit=true;
         LevelScore.enemiesWiped += 1;
-        //Droplet_PS.Play();
         }
+        Destroy(gameObject);
+        //Invoke("Delay", 0.05f);
+    }
+
+    private void Delay()
+    {
         Destroy(gameObject);
     }
 
