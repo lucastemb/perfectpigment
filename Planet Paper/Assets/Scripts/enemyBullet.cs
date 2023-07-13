@@ -17,8 +17,10 @@ public class enemyBullet : MonoBehaviour
             LevelScore.enemiesWiped=0;
             
         }
-        else if (!col.gameObject.CompareTag("Enemy")){
+        if(!col.gameObject.CompareTag("Enemy")){
             Destroy(gameObject);
         }
+        
+        
     }
 }
