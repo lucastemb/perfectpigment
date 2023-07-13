@@ -25,11 +25,13 @@ public class Bullet : MonoBehaviour
         Rigidbody projectile = GetComponent<Rigidbody>();
         if (collision.gameObject.CompareTag("Enemy"))
         {
-        Destroy(collision.gameObject);
-        hit=true;
-        LevelScore.enemiesWiped += 1;
+            Destroy(collision.gameObject);
+            hit=true;
+            LevelScore.enemiesWiped += 1;
         }
         Destroy(gameObject);
+       
+        
         //Invoke("Delay", 0.05f);
     }
 
