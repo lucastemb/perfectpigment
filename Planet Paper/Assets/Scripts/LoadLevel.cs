@@ -37,4 +37,8 @@ public class LoadLevel : MonoBehaviour
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene("City");
     }
+
+    public void Restart(){
+        Load(LevelInfo.levels[LoadLevel.currentLevel].getName());
+    }
 }
