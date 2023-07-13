@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class LoadLevel : MonoBehaviour
 {
 
-    public static int currentLevel = 3; 
+    public static int currentLevel = 0; 
     public static void Load(string LevelName)
     {
         Time.timeScale = 1f;
@@ -36,5 +36,9 @@ public class LoadLevel : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene("City");
+    }
+
+    public void Restart(){
+        Load(LevelInfo.levels[LoadLevel.currentLevel].getName());
     }
 }
